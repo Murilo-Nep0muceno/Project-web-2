@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/form.css">
+</head>
+<body>
+    
+    <h1>Fomulario de inscrição</h1>
+    
+    <form  onsubmit="changePage(event)" id="form" >
+       <div> <label for="">Nome Completo </label></div>
+       <div> <p id="error_name" for="">Nome invalido </p></div>
+     
+       <div><input required id="name" type="text" onchange="isNameIsNotEmpyt()"  placeholder="nome completo"></div>
+    
+       <div> <label for="">E-mail </label></div>
+       <div> <p id="error_email"  for="">Email invalido </p></div>
+       <div><input required id="email" type="email" onchange=" isEmailIsNotEmpyt()" placeholder="email"></div>
+    
+       <div> <label for="">Telefone </label></div>
+       <div> <p id="error_tel" for="">Telefone invalido </p></div>
+       <div><input required id="tel" type="number" onchange="telIsNotEmpyt()" maxlength="11" placeholder="telefone"></div>
+    
+       <div> <label for="">Data Nascimento</label></div>
+       <div> <p id="error_date" for="">Data invalida </p></div>
+       <div><input required id="date" type="date" onchange="dateIsNotEmpyt()"  placeholder=""></div>
+    
+       <div id="form-gender">
+        <h3 id="error_gender">Selecione um Gênero</h3>
+        <h3 id="title_gender">Gênero</h3>
+        <div><input required type="radio" onchange="genderIsValid()" name="radio" value="Masculino">Masculino</div>
+        <div> <input required type="radio" onchange="genderIsValid()"  name="radio" value="Feminino">Feminino</div>
+        <div><input required type="radio"  onchange="genderIsValid()" name="radio" value="Indefinido">Indefinido</div>
+        </div>
+     
+        <h3 id="error_select">Selecione uma opção</h3>
+    <select required  name="sel_form" onchange="selectIsValid()" id="sel_form">
+        <option value="" disabled  selected >Selecione uma Opção</option>
+        <option value="opcao1" >Palestrante</option>
+        <option value="opcao2">Participante</option>
+        <option value="opcao3">Voluntário</option>
+    </select>
+        
+       <div> <label for="">Mensagem </label></div>
+       <h3 id="error_menssage">Digite uma Mensagem</h3>
+
+       <div><textarea required onchange="menssageIsValis()" maxlength="200" id="form_menssage"></textarea></div>
+
+       <div id="form_buttons">
+
+       <button onclick="clearFields()" id="clear">Limpar</button>
+       <button type="submit" onclick="
+    fieldsAreValid()"  id="registerBtn">Cadastro</button>
+    </div>
+
+    </form>
+</body>
+
+<script src="/js/main.js"></script>
+
+</html>
